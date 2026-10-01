@@ -1,97 +1,75 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# NGUYEN HUY LONG VU - 23671981 - https://github.com/huyvu2112005-ux/23671981_TH2.git- #698039 - So cuoi: 1 - VARIANT: Watermark Duoi | Login phone | Tab Shop->Gio->Toi | Haptic selection | Phi B | Detail card
 
-# Getting Started
+## THỰC HÀNH 2 - KTXGo
+- **Sinh viên:** NGUYỄN HUY LONG VŨ
+- **MSSV:** 23671981
+- **Lớp:** DHIOT19B
+- **Mã Stamp:** #698039
+- **Phòng giao:** P.281
+- **GitHub Clone URL:** https://github.com/huyvu2112005-ux/23671981_TH2.git
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+### Cấu hình biến thể (Số cuối: 1)
+- **Watermark:** Dưới (`watermarkAtTop: false`)
+- **Ô Login:** `phone` (`authField: 'phone'`)
+- **Thứ tự Tab:** `Shop -> Giỏ -> Tôi` (`tabOrder: 'shopFirst'`)
+- **Haptic on Add:** `selection` (`hapticOnAdd: 'selection'`)
+- **Công thức phí ship:** `Công thức B` (`BASE_SHIP_FEE + Math.round(km * 1500) + 2000`)
+- **Detail Presentation:** `card` (`detailPresentation: 'card'`)
+- **Hệ số giá:** `PRICE_MULTIPLIER = 25500`
+- **Phí cơ bản:** `BASE_SHIP_FEE = 9000`
+- **Debounce:** `DEBOUNCE_MS = 400ms`
+- **React Query staleTime:** `STALE_TIME_MS = 11000ms`
 
-## Step 1: Start Metro
-
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
-
-To start the Metro dev server, run the following command from the root of your React Native project:
-
-```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+### Cấu trúc Project
+```
+KTXGo_23671981/
+├── README.md
+├── App.tsx
+├── package.json
+├── babel.config.js
+├── tsconfig.json
+├── docs/
+│   ├── screenshot-th2-home.png
+│   └── screenshot-th2-cart.png
+└── src/
+    ├── constants/
+    │   ├── student.ts
+    │   └── theme.ts
+    ├── hooks/
+    │   ├── useCampusLocation.ts
+    │   └── useDebouncedValue.ts
+    ├── services/
+    │   ├── apiClient.ts
+    │   └── productApi.ts
+    ├── stores/
+    │   ├── authStore.ts
+    │   └── cartStore.ts
+    ├── navigation/
+    │   ├── AuthStack.tsx
+    │   ├── MainTabs.tsx
+    │   ├── RootNavigator.tsx
+    │   └── ShopStack.tsx
+    ├── components/
+    │   ├── ProductCard.tsx
+    │   └── Watermark.tsx
+    └── screens/
+        ├── CartScreen.tsx
+        ├── DetailScreen.tsx
+        ├── HomeScreen.tsx
+        ├── LoginScreen.tsx
+        └── MeScreen.tsx
 ```
 
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+### Hướng dẫn chạy
+1. Cài đặt dependencies:
+   ```bash
+   npm install
+   ```
+2. Chạy Metro Bundler:
+   ```bash
+   npm start
+   ```
+3. Chạy Android:
+   ```bash
+   npm run android
+   ```
